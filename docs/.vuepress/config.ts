@@ -233,7 +233,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     [
       'script',
       {
-        'data-ad-client': 'pub-5887742146351261',
+        'data-ad-client': 'ca-pub-5887742146351261',
         async: 'async',
         src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
       },
