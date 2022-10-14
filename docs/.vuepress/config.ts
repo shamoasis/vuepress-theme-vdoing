@@ -172,7 +172,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 博主信息 (显示在首页侧边栏)
     blogger: {
-      avatar: '/img/avatr.png',
+      avatar: '/img/avator.png',
       name: '大漠',
       slogan: '看山是山，看水是水',
     },
