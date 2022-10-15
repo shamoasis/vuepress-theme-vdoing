@@ -237,9 +237,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         async: 'async',
         src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
       },
-      {
-        src:'https://hm.baidu.com/hm.js?930eee3bc195ad47bfd0f18cc7498d83',
-      }
+      // {
+      //   src:'https://hm.baidu.com/hm.js?930eee3bc195ad47bfd0f18cc7498d83',
+      // }
     ], // 网站关联Google AdSense 与 html格式广告支持（你可以去掉）
   ],
 
