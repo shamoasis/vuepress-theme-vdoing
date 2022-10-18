@@ -261,7 +261,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       },
     ],
     [
-        'vuepress-plugin-google-analytics',// google-analytics 
+        '@vuepress/google-analytics',// google-analytics 
         {
           'ga':"G-C0R3CRB7GL" //替换成自己实际申请的ID
         }
