@@ -380,7 +380,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // ],
     [
       {
-        name: 'custom-plugins', // twikoo 评论
+        name: 'custom-plugins-tk', // twikoo 评论
         globalUIComponents: ["Twikoo"] // 2.x 版本 globalUIComponents 改名为 clientAppRootComponentFiles
       }
     ],
