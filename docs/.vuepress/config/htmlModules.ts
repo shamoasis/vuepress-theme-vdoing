@@ -95,17 +95,17 @@ const htmlModule: VdoingThemeConfig['htmlModules'] = {
   //     <script>
   //         (adsbygoogle = window.adsbygoogle || []).push({});
   //     </script>`,
-  windowRB:
-    `<!-- 固定160*160px -->
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <ins class="adsbygoogle"
-          style="display:inline-block;max-width:160px;max-height:160px"
-          data-ad-client="ca-pub-5887742146351261"
-          data-ad-slot="3433097810"></ins>
-      <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-      `,
+  // windowRB:
+  //   `<!-- 固定160*160px -->
+  //     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  //     <ins class="adsbygoogle"
+  //         style="display:inline-block;max-width:160px;max-height:160px"
+  //         data-ad-client="ca-pub-5887742146351261"
+  //         data-ad-slot="3433097810"></ins>
+  //     <script>
+  //         (adsbygoogle = window.adsbygoogle || []).push({});
+  //     </script>
+  //     `,
 }
 
 
