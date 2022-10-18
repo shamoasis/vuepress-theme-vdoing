@@ -1,7 +1,7 @@
-const fs = require('fs'); // 文件模块
-const path = require('path'); // 路径模块
-const matter = require('gray-matter'); // FrontMatter解析器 https://github.com/jonschlinkert/gray-matter
-const chalk = require('chalk') // 命令行打印美化
+import fs from 'fs'; // 文件模块
+import path from 'path'; // 路径模块
+import matter from 'gray-matter'; // FrontMatter解析器 https://github.com/jonschlinkert/gray-matter
+import chalk from 'chalk' // 命令行打印美化
 const log = console.log
 const docsRoot = path.join(__dirname, '..', '..', '..', 'docs'); // docs文件路径
 
@@ -9,7 +9,7 @@ const docsRoot = path.join(__dirname, '..', '..', '..', 'docs'); // docs文件�
  * 获取本站的文章数据
  * 获取所有的 md 文档，可以排除指定目录下的文档
  */
-function readFileList(excludeFiles = [''], dir = docsRoot, filesList = []) {
+function readFileList(excludeFiles= [''], dir = docsRoot, filesList = []) {
   const files = fs.readdirSync(dir);
   files.forEach((item, index) => {
     let filePath = path.join(dir, item);
@@ -53,10 +53,10 @@ function readFileList(excludeFiles = [''], dir = docsRoot, filesList = []) {
  */
 function readTotalFileWords(excludeFiles = ['']) {
   const filesList = readFileList(excludeFiles);
-  var wordCount = 0;
+  let wordCount = 0;
   filesList.forEach((item) => {
     const content = getContent(item.filePath);
-    var len = counter(content);
+    let len = counter(content);
     wordCount += len[0] + len[1];
   });
   if (wordCount < 1000) {
@@ -73,10 +73,10 @@ function readEachFileWords(excludeFiles = [''], cn, en) {
   const filesList = readFileList(excludeFiles);
   filesList.forEach((item) => {
     const content = getContent(item.filePath);
-    var len = counter(content);
+    let len = counter(content);
     // 计算预计的阅读时间
-    var readingTime = readTime(len, cn, en);
-    var wordsCount = 0;
+    let readingTime = readTime(len, cn, en);
+    let wordsCount = 0;
     wordsCount = len[0] + len[1];
     if (wordsCount >= 1000) {
       wordsCount = Math.round(wordsCount / 100) / 10 + 'k';
@@ -93,23 +93,23 @@ function readEachFileWords(excludeFiles = [''], cn, en) {
  * 计算预计的阅读时间
  */
 function readTime(len, cn = 300, en = 160) {
-  var readingTime = len[0] / cn + len[1] / en;
+  let readingTime = len[0] / cn + len[1] / en;
   if (readingTime > 60 && readingTime < 60 * 24) {   // 大于一个小时，小于一天
-    let hour = parseInt(readingTime / 60);
-    let minute = parseInt((readingTime - hour * 60));
+    let hour = Math.trunc(readingTime / 60);
+    let minute = Math.trunc(readingTime - hour * 60);
     if (minute === 0) {
       return hour + 'h';
     }
     return hour + 'h' + minute + 'm';
   } else if (readingTime > 60 * 24) {      // 大于一天
-    let day = parseInt(readingTime / (60 * 24));
-    let hour = parseInt((readingTime - day * 24 * 60) / 60);
+    let day = Math.trunc(readingTime / (60 * 24));
+    let hour = Math.trunc((readingTime - day * 24 * 60) / 60);
     if (hour === 0) {
       return day + 'd';
     }
     return day + 'd' + hour + 'h';
   }
-  return readingTime < 1 ? '1' : parseInt((readingTime * 10)) / 10 + 'm';   // 取一位小数
+  return readingTime < 1 ? '1' : Math.trunc(readingTime * 10) / 10 + 'm';   // 取一位小数
 }
 
 /**
@@ -129,7 +129,7 @@ function counter(content) {
   return [cn, en];
 }
 
-module.exports = {
+export {
   readFileList,
   readTotalFileWords,
   readEachFileWords,

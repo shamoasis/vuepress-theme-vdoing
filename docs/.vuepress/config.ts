@@ -252,10 +252,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     [
       'script',
       {
-        // 'data-ad-client': 'ca-pub-5887742146351261',
-        async: 'async',
-        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5887742146351261',
-        crossorigin: 'anonymous'
+        'data-ad-client': 'ca-pub-5887742146351261',
+        async: true,
+        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
       }
     ], // 网站关联Google AdSense 与 html格式广告支持（你可以去掉）
     // [
@@ -279,7 +278,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       },
     ],
     [
-      'vuepress-plugin-google-analytics',// google-analytics 
+      '@vuepress/google-analytics',// google-analytics 
       {
         'ga': "G-C0R3CRB7GL" //替换成自己实际申请的ID
       }
