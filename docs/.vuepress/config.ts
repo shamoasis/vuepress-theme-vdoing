@@ -234,20 +234,28 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     [
       'script',
       {
-        'data-ad-client': 'ca-pub-5887742146351261',
+        // 'data-ad-client': 'ca-pub-5887742146351261',
         async: 'async',
-        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
+        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5887742146351261',
+        crossorigin: 'anonymous'
       }
     ], // 网站关联Google AdSense 与 html格式广告支持（你可以去掉）
     [
       'script',
       {
-        src: 'https://hm.baidu.com/hm.js?930eee3bc195ad47bfd0f18cc7498d83',
-      },
-    ],// 百度统计
+        async :'async',
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-C0R3CRB7GL'
+      }
+    ],
+    // [
+    //   'script',
+    //   {
+    //     src: 'https://hm.baidu.com/hm.js?930eee3bc195ad47bfd0f18cc7498d83',
+    //   },
+    // ],// 百度统计
     ['script',
       { src: 'https://cdn.staticfile.org/twikoo/1.6.7/twikoo.all.min.js' }
-    ],
+    ],// twikoo评论
   ],
 
 
@@ -262,12 +270,12 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     'vuepress-plugin-baidu-autopush', // 百度自动推送
 
-    // [
-    //   'vuepress-plugin-baidu-tongji', // 百度统计
-    //   {
-    //     hm: baiduCode,
-    //   },
-    // ],
+    [
+      'vuepress-plugin-baidu-tongji', // 百度统计
+      {
+        hm: baiduCode,
+      },
+    ],
 
     // 全文搜索。 ⚠️注意：此插件会在打开网站时多加载部分js文件用于搜索，导致初次访问网站变慢。如在意初次访问速度的话可以不使用此插件！（推荐：vuepress-plugin-thirdparty-search）
     // 'fulltext-search',
