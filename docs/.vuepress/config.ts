@@ -240,13 +240,6 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         crossorigin: 'anonymous'
       }
     ], // 网站关联Google AdSense 与 html格式广告支持（你可以去掉）
-    [
-      'script',
-      {
-        async :'async',
-        src: 'https://www.googletagmanager.com/gtag/js?id=G-C0R3CRB7GL'
-      }
-    ],
     // [
     //   'script',
     //   {
@@ -266,6 +259,12 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       {
         hostname: WEB_SITE,
       },
+    ],
+    [
+        'vuepress-plugin-google-analytics',// google-analytics 
+        {
+          'ga':"G-C0R3CRB7GL" //替换成自己实际申请的ID
+        }
     ],
 
     // 'vuepress-plugin-baidu-autopush', // 百度自动推送
