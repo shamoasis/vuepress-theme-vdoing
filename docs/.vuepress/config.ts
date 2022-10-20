@@ -252,31 +252,25 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     [
       'script',
       {
-        async: true,
+        async: 'async',
         src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5887742146351261',
         crossorigin: 'anonymous'
       }
     ], // 网站关联Google AdSense 与 html格式广告支持（你可以去掉）
-    // [
-    //   'script',
-    //   {
-    //     src: 'https://hm.baidu.com/hm.js?930eee3bc195ad47bfd0f18cc7498d83',
-    //   },
-    // ],// 百度统计
+    [
+      'script',
+      {
+        async: 'async',
+        src: 'https://hm.baidu.com/hm.js?930eee3bc195ad47bfd0f18cc7498d83',
+      },
+    ],// 百度统计
     ['script',
       { src: 'https://cdn.staticfile.org/twikoo/1.6.7/twikoo.all.min.js' }
     ],// twikoo评论
     [
       'script', {}, `
-            var _hmt = _hmt || [];
             (function() {
-            // 引入百度统计,不需要可删除这段
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?930eee3bc195ad47bfd0f18cc7498d83";
-            var s = document.getElementsByTagName("script")[0]; 
-            s.parentNode.insertBefore(hm, s);
-
-            // 引入谷歌,不需要可删除这段
+            // 引入google analytics 4,不需要可删除这段
             var hm1 = document.createElement("script");
             hm1.async="true";
             hm1.src = "https://www.googletagmanager.com/gtag/js?id=G-SB6R62YCTV";
