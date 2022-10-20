@@ -101,7 +101,7 @@ const htmlModule: VdoingThemeConfig['htmlModules'] = {
       crossorigin="anonymous"></script>
       <!-- wrb -->
       <ins class="adsbygoogle"
-          style="display:inline-block;max-width:160px;max-height:160px"
+          style="display:block;"
           data-ad-client="ca-pub-5887742146351261"
           data-ad-slot="3065019836"
           data-ad-format="auto"
