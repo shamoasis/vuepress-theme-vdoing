@@ -203,7 +203,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 页脚信息
     footer: {
-      createYear: 2019, // 博客创建年份
+      createYear: 2022, // 博客创建年份
       copyrightInfo:
         'Damo | <a href="https://github.com/shamoasis/vuepress-theme-vdoing/blob/master/LICENSE" target="_blank">MIT License</a>', // 博客版权信息、备案信息等，支持a标签或换行标签</br>
     },
@@ -211,7 +211,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // 扩展自动生成frontmatter。（当md文件的frontmatter不存在相应的字段时将自动添加。不会覆盖已有的数据。）
     extendFrontmatter: {
       author: {
-        name: 'Damo',
+        name: '大漠',
         link: 'https://github.com/shamoasis'
       }
     },
@@ -252,9 +252,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     [
       'script',
       {
-        'data-ad-client': 'ca-pub-5887742146351261',
         async: true,
-        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
+        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5887742146351261',
+        crossorigin: 'anonymous'
       }
     ], // 网站关联Google AdSense 与 html格式广告支持（你可以去掉）
     // [
@@ -266,6 +266,32 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     ['script',
       { src: 'https://cdn.staticfile.org/twikoo/1.6.7/twikoo.all.min.js' }
     ],// twikoo评论
+    [
+      'script', {}, `
+            var _hmt = _hmt || [];
+            (function() {
+            // 引入百度统计,不需要可删除这段
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?930eee3bc195ad47bfd0f18cc7498d83";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+
+            // 引入谷歌,不需要可删除这段
+            var hm1 = document.createElement("script");
+            hm1.async=""true;
+            hm1.src = "https://www.googletagmanager.com/gtag/js?id=G-SB6R62YCTV";
+            var s1 = document.getElementsByTagName("script")[0]; 
+            s1.parentNode.insertBefore(hm1, s1);
+            })();
+
+            // 谷歌加载,不需要可删除
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-SB6R62YCTV');
+        `
+    ]
   ],
 
 
@@ -277,12 +303,12 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         hostname: WEB_SITE,
       },
     ],
-    [
-      '@vuepress/google-analytics',// google-analytics 
-      {
-        'ga': "G-SB6R62YCTV" //替换成自己实际申请的ID
-      }
-    ],
+    // [
+    //   '@vuepress/google-analytics',// google-analytics 
+    //   {
+    //     'ga': "G-SB6R62YCTV" //替换成自己实际申请的ID
+    //   }
+    // ],
 
     // 'vuepress-plugin-baidu-autopush', // 百度自动推送
 
