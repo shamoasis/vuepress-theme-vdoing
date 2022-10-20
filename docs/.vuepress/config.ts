@@ -278,7 +278,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
             // 引入谷歌,不需要可删除这段
             var hm1 = document.createElement("script");
-            hm1.async=""true;
+            hm1.async="true";
             hm1.src = "https://www.googletagmanager.com/gtag/js?id=G-SB6R62YCTV";
             var s1 = document.getElementsByTagName("script")[0]; 
             s1.parentNode.insertBefore(hm1, s1);
