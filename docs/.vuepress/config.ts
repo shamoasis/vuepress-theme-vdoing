@@ -257,13 +257,13 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         crossorigin: 'anonymous'
       }
     ], // 网站关联Google AdSense 与 html格式广告支持（你可以去掉）
-    [
-      'script',
-      {
-        async: 'async',
-        src: 'https://hm.baidu.com/hm.js?930eee3bc195ad47bfd0f18cc7498d83',
-      },
-    ],// 百度统计
+    // [
+    //   'script',
+    //   {
+    //     async: 'async',
+    //     src: 'https://hm.baidu.com/hm.js?930eee3bc195ad47bfd0f18cc7498d83',
+    //   },
+    // ],// 百度统计
     ['script',
       { src: 'https://cdn.staticfile.org/twikoo/1.6.7/twikoo.all.min.js' }
     ],// twikoo评论
@@ -414,7 +414,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       '@vuepress/last-updated', // "上次更新"时间格式
       {
         transformer: (timestamp, lang) => {
-          return dayjs(timestamp).format('YYYY/MM/DD, HH:mm:ss')
+          return dayjs(timestamp).add(8, 'hour').format('YYYY/MM/DD, HH:mm:ss')
         },
       },
     ],
